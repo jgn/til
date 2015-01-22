@@ -6,15 +6,19 @@ also act as a login shell or a non-login shell.
 `bash(1)` is started in interactive mode by your terminal emulator and can also
 be started in interactive mode like this:
 
-    bash
-    bash -i
-    bash -ic 'echo Hello!'
+```bash
+bash
+bash -i
+bash -ic 'echo Hello!'
+```
 
 When you run a script through `bash(1)` or if you start it with the `-c` option,
 it will run in non-interactive mode:
 
-    bash script.sh
-    bash -c 'echo Hello!'
+```bash
+bash script.sh
+bash -c 'echo Hello!'
+```
 
 `bash(1)` is instructed to act as a login shell when you first log in to your
 machine or when you start `bash(1)` with the `--login` or `-l` option.
@@ -36,9 +40,11 @@ idempotent operation. Suppose something like this was in your `.bashrc`:
 Running these commands from a newly started interactive shell would produce the
 output below:
 
-    bash
-    bash
-    echo "$PATH"
-    /original_path:/addition:/addition:/addition
+```bash
+bash
+bash
+echo "$PATH"
+/original_path:/addition:/addition:/addition
+```
 
 Setting `PATH` in `.bash_profile` alleviates this problem.
